@@ -7,6 +7,7 @@ int main ()
     realizado en el laboratorio G-202
     authot rafael yepez
     */
+   //short int i=40000;
    print f("hola mundo")
    std::cout<<"estamos en c++"<<std::end;
    std::cout<"c++ esta bonito";
