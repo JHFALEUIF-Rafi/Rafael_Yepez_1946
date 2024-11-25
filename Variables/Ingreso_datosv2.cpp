@@ -1,10 +1,10 @@
 #include<iostream>
 main(){
     int i,
-    short valor;
-    char letra;
-    bool bandera;
-    float peso;
+    short valor,
+    char letra,
+    bool bandera,
+    float peso,
     double altura;
     
     cout << "Ingrese valor entero:\t";

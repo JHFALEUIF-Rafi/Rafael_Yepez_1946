@@ -1,5 +1,6 @@
 #include <iostream>
 #include <numbers>
+using namespace std;
 /*
 Integrantes: 
 -Alexis Chicaiza
@@ -7,7 +8,6 @@ Integrantes:
 -Jhoel Pallaroso
 -Rafael Yépez
 */
-using namespace std;
 int main(){
     float r, h, volumen, area;
     cout << "Ingrese radio: ";
