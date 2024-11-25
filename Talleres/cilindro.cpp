@@ -9,13 +9,14 @@ Integrantes:
 */
 int main(){
     float r, h, volumen, area;
+    const float PI = 3.1416;
     cout << "Ingrese radio: ";
     cin >> r;
     cout << "Ingrese altura: ";
     cin >> h;
 
-    volumen = 3.14 *( r * r) * h; 
-    area = 2 * 3.14 * r * (h + r);
+    volumen = PI *( r * r) * h; 
+    area = 2 * PI * r * (h + r);
     if (h > r)
     {
        cout << "El volumen del cilindro es: " << volumen << endl; 
