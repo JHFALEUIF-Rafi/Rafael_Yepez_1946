@@ -1,5 +1,4 @@
 #include <iostream>
-#include <numbers>
 using namespace std;
 /*
 Integrantes: 
