@@ -10,10 +10,10 @@ main()
     printf("Ingreseun valor entero:\t");
     scanf("%d",&i);
     printf("Ingrese vaalor short:\t");
-    scanf("%d,&valor")
+    scanf("%d,&valor");
     printf("ingrese valor char:\t");
-    scanf("%d,&letra")
-    printf()
+    scanf("%d,&letra");
+    printf();
     
 
 }

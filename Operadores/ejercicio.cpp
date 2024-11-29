@@ -21,6 +21,6 @@ int main()
     cout << "c || !d: " << (c || !d) << endl;
     cout << "!c && d: " << (!c && d) << endl;
     cout << "!c || d: " << (!c || d) << endl;*/
-  
-    return 0; 
+
+    return 0;
 }
