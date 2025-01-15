@@ -28,7 +28,7 @@ int main ()
             cout << "Es fin de semana" << endl;
             break;
         default:
-            cout << "Dia no valido" << endl;
+            cout << "Ponte a contar los dias de la semana burr0" << endl;
         break;
     }
     return 0;
