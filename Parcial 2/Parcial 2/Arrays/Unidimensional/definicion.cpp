@@ -12,12 +12,14 @@ int main()
     cout << "El ultimo elemento de estatura es: " << estatura[4] << endl;
     cout << "El elemento en medio de sexo es: " << sexo[5 / 2] << endl;
 
-    for (int i=0; i < 5; i++){
-        cout<<"El elemento "<<i<<" del vector edad es: "<<edad[i]<<endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "El elemento " << i << " del vector edad es: " << edad[i] << endl;
     }
 
-    for (int i=0; i < 5; i++){
-    cout<<"El elemento "<<i<<" del vector sexo es: "<<sexo[i]<<endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "El elemento " << i << " del vector sexo es: " << sexo[i] << endl;
     }
     return 0;
 }

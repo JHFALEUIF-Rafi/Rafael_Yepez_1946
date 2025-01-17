@@ -3,8 +3,18 @@ using namespace std;
 
 float division(float a, float b)
 {
-    if (a<b)
-        return a/b;
+    // if(b==0)
+        // return -1;
+        // if(a<b)
+        // return a;
+    // else
+    //{
+        // cociente++;
+        // return dividir(a-b,b,cociente)
+    //}
+    
+    if (a < b)
+        return a / b;
     else
         return 1 + division(a - b, b);
 }
