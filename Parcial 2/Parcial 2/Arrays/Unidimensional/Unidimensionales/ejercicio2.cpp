@@ -3,35 +3,41 @@
 #include <time.h>   //libreria para el uso time
 using namespace std;
 
-void llenaDatos(int v[], int ne)
+float llenaDatos(float v[], int ne)
 {
+    float num, op;
     srand(time(NULL));
     for (int i = 0; i < ne; i++)
     {
-        v[i] = rand() % 20 + 1;
+        num = (rand() % 99 + 1) / 100.0;
+        v[i] = 50 + (rand() % 50);
+        op = v[i] + num;
+        cout << op << " ";
+        v[i]=op;
     }
+    return op;
 }
 
-void verDatos(int v[], int ne)
+void verDatos(float v[], int ne)
 {
-    cout << "Los elementos del vector son:" << endl;
+    cout << "\nLos elementos del vector son:" << endl;
     for (int i = 0; i < ne; i++)
     {
         cout << v[i] << " ";
     }
 }
 
-int sumarPromedioCifras(int v[], int ne)
+float sumarPromedioCifras(float v[], int ne)
 {
-    int suma = 0;
+    float suma = 0.0;
     for (int i = 0; i < ne; i++)
     {
         suma += v[i];
     }
-    return (float)suma / ne;
+    return suma / ne;
 }
 
-int contarBajoPromedio(int v[], int ne, int promedio)
+int contarBajoPromedio(float v[], int ne, float promedio)
 {
     int contar = 0;
     for (int i = 0; i < ne; i++)
@@ -44,7 +50,7 @@ int contarBajoPromedio(int v[], int ne, int promedio)
     return contar;
 }
 
-void guardarElementosMenores(int v[], int ne, float promedio, int lista[])
+void guardarElementosMenores(float v[], int ne, float promedio, float lista[])
 {
     int j = 0;
     for (int i = 0; i < ne; i++)
@@ -63,16 +69,20 @@ int main()
     float promedioNumeros;
     cout << "Cuantos elementos tiene el vector?: ";
     cin >> ne;
-    int vector[ne];
+
+    float vector[ne];
     llenaDatos(vector, ne);
     verDatos(vector, ne);
+
     promedioNumeros = sumarPromedioCifras(vector, ne);
     cout << "\nEl promedio de los datos generados es: " << promedioNumeros << endl;
+
     menores = contarBajoPromedio(vector, ne, promedioNumeros);
-    cout << "La cantidad de elementos debajo del promedio son: " << contarBajoPromedio(vector, ne, promedioNumeros) << endl;
-    int listaMenores[menores];
-    guardarElementosMenores(vector,ne,promedioNumeros,listaMenores);
-    verDatos(listaMenores,menores);
+    cout << "La cantidad de elementos debajo del promedio son: " << menores << endl;
+
+    float listaMenores[menores];
+    guardarElementosMenores(vector, ne, promedioNumeros, listaMenores);
+    verDatos(listaMenores, menores);
 
     return 0;
 }
