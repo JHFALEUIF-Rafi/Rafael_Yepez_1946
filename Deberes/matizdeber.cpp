@@ -1,4 +1,4 @@
-//Programa para calcular suma de diagonales
+// Programa para calcular suma de diagonales
 
 #include <iostream>
 #include <stdlib.h>
@@ -13,13 +13,14 @@ void llenarTabla(float tabla[10][10], int f, int c)
     {
         for (int j = 0; j < c; j++)
         {
-            num = (rand() % 19 + 1) / 100.0;
-            tabla[i][j] = 10 + rand() % 20;
+            num = (rand() % 98 + 1) / 100.0;
+            tabla[i][j] = 10 + rand() % 10;
             op = tabla[i][j] + num;
             tabla[i][j] = op;
         }
     }
 }
+
 void verDatos(float tabla[10][10], int f, int c)
 {
     cout << "Los elementos de la matriz son: " << endl;
@@ -41,7 +42,7 @@ float sumaDiagonalPrincipal(float tabla[10][10], int dP)
         sumadP += tabla[i][i];
     }
     cout << "\nLa suma de la diagonal principal es: " << sumadP << endl;
-    return sumadP;    
+    return sumadP;
 }
 
 float sumaDiagonalSecundaria(float tabla[10][10], int dS)
@@ -91,7 +92,6 @@ void imprimirDiagonales(float tabla[10][10], int n)
     }
 }
 
-
 int main()
 {
     float tabla[10][10];
@@ -108,11 +108,11 @@ int main()
     llenarTabla(tabla, filas, filas);
     verDatos(tabla, filas, filas);
 
-    float sumadP=sumaDiagonalPrincipal(tabla, filas);
-    float sumadS=sumaDiagonalSecundaria(tabla, filas);
+    float sumadP = sumaDiagonalPrincipal(tabla, filas);
+    float sumadS = sumaDiagonalSecundaria(tabla, filas);
 
-    comparaciones(sumadP,sumadS); 
+    comparaciones(sumadP, sumadS);
 
-    imprimirDiagonales(tabla,filas);
+    imprimirDiagonales(tabla, filas);
     return 0;
 }
