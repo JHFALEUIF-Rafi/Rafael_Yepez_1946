@@ -96,7 +96,7 @@ void jugarRondas(int puntosUsuario, int puntosMaquina)
 
     if (resultado == 1)
     {
-      cout << "¡Ganaste esta ronda!\n";
+      cout << "Ganaste esta ronda\n";
       puntosUsuario++;
     }
     else if (resultado == -1)
@@ -106,7 +106,7 @@ void jugarRondas(int puntosUsuario, int puntosMaquina)
     }
     else
     {
-      cout << "¡Empate!\n";
+      cout << "Empate\n";
     }
   }
 
