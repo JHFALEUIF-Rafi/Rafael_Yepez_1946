@@ -97,7 +97,7 @@ void comparaciones(int mejor, int peor)
     }
 }
 
-int main()
+void op()
 {
     int ne;
     cout << "Ingrese el numero de elementos: ";
@@ -128,5 +128,9 @@ int main()
     int peor = ordenarBurbujaV3(vec, ne);
     
     comparaciones(mejor, peor);
+}
+
+int main(){
+    op();
     return 0;
 }
