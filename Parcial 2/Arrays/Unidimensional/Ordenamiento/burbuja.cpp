@@ -109,20 +109,16 @@ void op()
     cout << endl;
     cout << "El numero de comparaciones burbuja v1 es: " << ordenarBurbuja(vec, ne) << endl;
     cout << "Vector ordenado" << endl;
+    mostrarVector(vec, ne);
+    cout<<endl;
     
-    cout << "\nVector original: ";
-    mostrarVector(vec, ne);
-    cout << endl;
+  
     cout << "El numero de comparaciones burbuja v2 es: " << ordenarBurbujaV2(vec, ne) << endl;
-    cout << "Vector ordenado" << endl;
-    cout << "Vector ordenado" << endl;
+    
 
-    cout << "\nVector original: ";
-    mostrarVector(vec, ne);
-    cout << endl;
+  
     cout << "El numero de comparaciones burbuja v3 es: " << ordenarBurbujaV3(vec, ne) << endl;
-    cout << "Vector ordenado" << endl;
-    mostrarVector(vec, ne);
+  
 
     int mejor = ordenarBurbuja(vec,ne);
     int peor = ordenarBurbujaV3(vec, ne);

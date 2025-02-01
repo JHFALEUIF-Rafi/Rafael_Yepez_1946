@@ -20,26 +20,26 @@ void mostrarVector(int v[], int n)
     }
 }
 
-int ordenSeleccion(int v[], int n)
+int ordenarInsercion(int v[], int n)
 {
     int contar = 0, aux;
-    bool cambios = true;
-    for (int i = 0; i < n - 1; i++)
+
+    for (int i = 1; i < n; i++)
     {
-        cambios = false;
-        for (int j = i + 1; j < n; j++)
+        aux = v[i];
+        int j = i - 1;
+        while (j >= 0)
         {
             contar++;
-            if (v[i] > v[j])
+            if (aux < v[j])
             {
-                aux = v[i];
-                v[i] = v[j];
+                v[j + 1] = v[j];
                 v[j] = aux;
-                cambios = true;
             }
+            j--;
         }
     }
-    return contar++;
+    return contar;
 }
 
 void imprimir()
@@ -51,7 +51,7 @@ void imprimir()
     llenarTabla(vec, ne);
     cout << "\nVector Original: " << endl;
     mostrarVector(vec, ne);
-    comparaciones = ordenSeleccion(vec, ne);
+    comparaciones = ordenarInsercion(vec, ne);
     cout << "\nVector ordenado:" << endl;
     mostrarVector(vec, ne);
     cout << "\nEl numero de comparaciones es:  " << comparaciones << endl;
