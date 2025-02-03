@@ -109,23 +109,32 @@ int ordenSeleccionV1(int v[], int n)
 int ordenSeleccionV2(int v[], int n)
 {
     int contar = 0, aux;
-    bool cambios = true;
-    for (int i = 0; i < n - 1; i++)
+    bool ordenado = false; 
+
+    for (int i = 0; i < n - 1 && !ordenado; i++)
     {
-        cambios = false;
+        int min_idx = i;
+        ordenado = true; 
+
         for (int j = i + 1; j < n; j++)
         {
             contar++;
-            if (v[i] > v[j])
+            if (v[j] < v[min_idx])
             {
-                aux = v[i];
-                v[i] = v[j];
-                v[j] = aux;
-                cambios = true;
+                min_idx = j;
+                ordenado = false; 
             }
         }
+
+        if (!ordenado)
+        {
+            aux = v[i];
+            v[i] = v[min_idx];
+            v[min_idx] = aux;
+        }
     }
-    return contar++;
+
+    return contar;
 }
 
 int ordenarInsercion(int v[], int n)
