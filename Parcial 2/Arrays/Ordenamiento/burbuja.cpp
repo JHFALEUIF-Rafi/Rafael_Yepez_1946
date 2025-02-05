@@ -84,16 +84,18 @@ void mostrarVector(int v[], int n)
 }
 
 void comparaciones(int mejor, int peor)
-{   
+{
     if (mejor < peor)
     {
         cout << "\nEl numero de comparaciones de " << mejor << " es mejor que " << peor << endl;
     }
-    else if(mejor>peor){
+    else if (mejor > peor)
+    {
         cout << "\nEl numero de comparaciones de " << peor << " es mejor que " << mejor << endl;
     }
-    else{
-        cout<<"\nEl numero de comparaciones son iguales"<<endl;
+    else
+    {
+        cout << "\nEl numero de comparaciones son iguales" << endl;
     }
 }
 
@@ -110,23 +112,20 @@ void op()
     cout << "El numero de comparaciones burbuja v1 es: " << ordenarBurbuja(vec, ne) << endl;
     cout << "Vector ordenado" << endl;
     mostrarVector(vec, ne);
-    cout<<endl;
-    
-  
+    cout << endl;
+
     cout << "El numero de comparaciones burbuja v2 es: " << ordenarBurbujaV2(vec, ne) << endl;
-    
 
-  
     cout << "El numero de comparaciones burbuja v3 es: " << ordenarBurbujaV3(vec, ne) << endl;
-  
 
-    int mejor = ordenarBurbuja(vec,ne);
+    int mejor = ordenarBurbuja(vec, ne);
     int peor = ordenarBurbujaV3(vec, ne);
-    
+
     comparaciones(mejor, peor);
 }
 
-int main(){
+int main()
+{
     op();
     return 0;
 }

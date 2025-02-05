@@ -1,14 +1,16 @@
 #include <iostream>
+#include "../../../../Librerias/arrays..h"
 using namespace std;
+using namespace vectorn;
 
-void llenarTabla(int v[], int n)
+/*void llenarTabla(int v[], int n)
 {
     srand(time(NULL));
     for (int i = 0; i < n; i++)
     {
         v[i] = rand() % 99 + 1;
     }
-}
+}*/
 
 void mostrarVector(int v[], int n)
 {
@@ -52,7 +54,7 @@ void isBinario(int v[], int n, int elemento)
         if (v[centro] == elemento)
         {
             bandera = true;
-            cout << "El elemenrto se encuentra dentro del array" << endl;
+            cout << "El elemento se encuentra dentro del array" << endl;
             break;
         }
         else if (elemento > v[centro])
