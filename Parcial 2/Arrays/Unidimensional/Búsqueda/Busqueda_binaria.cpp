@@ -40,42 +40,34 @@ void ordenarBurbujaV3(int v[], int n)
     }
 }
 
-bool isBinario(int v[], int n, int elemento)
+void isBinario(int v[], int n, int elemento)
 {
-    int abajo = v[0];
-    int arriba = v[n - 1];
-    int centro = v[arriba + abajo] / 2;
+    int abajo = 0;
+    int arriba = n - 1;
+    bool bandera = false;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; abajo <= arriba; i++)
     {
-        if (elemento > centro)
+        int centro = (abajo + arriba) / 2;
+        if (v[centro] == elemento)
         {
-            abajo = centro;
-            for (i = abajo; i < arriba; i++)
-            {
-                if (v[i] == elemento)
-                {
-                    return true;
-                }
-            }
+            bandera = true;
+            cout << "El elemenrto se encuentra dentro del array" << endl;
+            break;
         }
-        else if (elemento < centro)
+        else if (elemento > v[centro])
         {
-            arriba = centro;
-            for (i = abajo; i < arriba; i++)
-            {
-                if (v[i] == elemento)
-                {
-                    return true;
-                }
-            }
+            abajo = centro + 1;
         }
         else
         {
-            cout<<elemento<<endl;
+            arriba = centro - 1;
         }
     }
-    return false;
+    if (!bandera)
+    {
+        cout << "El elemento no esta dentro del array" << endl;
+    }
 }
 
 void imprimir()
@@ -92,7 +84,7 @@ void imprimir()
     int dato;
     cout << "\nIngrese el dato a buscar (Valores entre 1 y 100): ";
     cin >> dato;
-    (isBinario(vector, n, dato)) ? cout << "El elemento esta en el array" : cout << "El elemento no existe";
+    isBinario(vector, n, dato);
 }
 
 int main()
