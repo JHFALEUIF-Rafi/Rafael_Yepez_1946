@@ -1,7 +1,9 @@
 #include <iostream>
-#include "../../../../Librerias/arrays..h"
+#include "../../../Librerias/arrays..h"
 using namespace std;
 using namespace vectorn;
+using namespace ver;
+using namespace ordenar;
 
 /*void llenarTabla(int v[], int n)
 {
@@ -12,15 +14,15 @@ using namespace vectorn;
     }
 }*/
 
-void mostrarVector(int v[], int n)
+/*void mostrarVector(int v[], int n)
 {
     for (int i = 0; i < n; i++)
     {
         cout << v[i] << " ";
     }
-}
+}*/
 
-void ordenarBurbujaV3(int v[], int n)
+/*void ordenarBurbujaV3(int v[], int n)
 {
     int mejora = 1;
     bool change = true;
@@ -40,7 +42,7 @@ void ordenarBurbujaV3(int v[], int n)
         }
         mejora++;
     }
-}
+}*/
 
 void isBinario(int v[], int n, int elemento)
 {
@@ -78,7 +80,7 @@ void imprimir()
     cout << "Ingrese el numero de elementos para el vector: ";
     cin >> n;
     int vector[n];
-    llenarTabla(vector, n);
+    llenarVector(vector, n);
     ordenarBurbujaV3(vector, n);
     mostrarVector(vector, n);
     cout << endl;
