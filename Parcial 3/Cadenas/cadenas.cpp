@@ -21,14 +21,17 @@ int longitudCadena(char cad[])
 int contarPalabras(char cad[])
 {
     int palabras = 1;
+    bool bandera = false;
     for (int i = 0; cad[i] != '\0'; i++)
     {
-        if (cad[i] == ' ' && cad[i + 1] != ' ')
+        if (cad[i] == ' ' && cad[i + 1] != ' ' && (cad[i + 1] != '\0'))
         {
             palabras++;
+            bandera = true;
         }
+        (palabras)?palabras++:palabras;
     }
-    return palabras;
+    return palabras+1;
 }
 
 int main()
