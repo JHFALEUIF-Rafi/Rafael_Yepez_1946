@@ -1,3 +1,4 @@
+//Rafael Yépez 
 #include <iostream>
 using namespace std;
 
@@ -20,26 +21,54 @@ int longitudCadena(char cad[])
 
 int contarPalabras(char cad[])
 {
-    int palabras = 1;
+    int palabras = 0, caracteres = 0;
     bool bandera = false;
+
     for (int i = 0; cad[i] != '\0'; i++)
     {
-        if (cad[i] == ' ' && cad[i + 1] != ' ' && (cad[i + 1] != '\0'))
+        if (cad[i] != ' ')
         {
-            palabras++;
-            bandera = true;
+            if (!bandera)
+            {
+                bandera = true;
+                caracteres = 1;
+            }
+            else
+            {
+                caracteres++;
+            }
         }
-        (palabras)?palabras++:palabras;
+        
+        else
+        {
+            if (bandera && caracteres > 1)
+            {
+                palabras++;
+            }
+            bandera = false;
+            caracteres = 0;
+        }
     }
-    return palabras+1;
+
+    if (bandera && caracteres > 1)
+    {
+        palabras++;
+    }
+
+    return palabras;
 }
 
-int main()
+void imprimir()
 {
     char palabras[50];
     llenarCadena(palabras);
     cout << "La cadena ingresada es: " << palabras << endl;
     cout << "la longitud de la cadena es: " << longitudCadena(palabras) << endl;
     cout << "La cantidad de palabras es: " << contarPalabras(palabras) << endl;
+}
+
+int main()
+{
+    imprimir();
     return 0;
 }
