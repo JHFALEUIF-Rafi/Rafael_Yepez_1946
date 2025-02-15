@@ -9,7 +9,6 @@ int main()
     string inicial(1, 'p');
     string cadena = "Juan Jose Arturo";
 
-
     string nombre2(cadena, 5, 4);
     cout << "La longitusd de nombre 2 es: " << nombre2.length() << endl;
     inicial += "edro";
