@@ -206,7 +206,6 @@ int main()
     datosVideoclub();
     datosLicenciaManejo();
     datosTarjetaCredito();
-
     imprimir();
     return 0;
 }
