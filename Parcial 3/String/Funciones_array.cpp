@@ -12,41 +12,105 @@ struct persona
 void ingresaDatosRegistro(persona per[], int n)
 {
     char resp;
+    cin.ignore();
     for (int i = 0; i < n; i++)
     {
         per[i].id = i + 1;
         cout << "Ingrese nombre: ";
         getline(cin, per[i].nombre);
-        cin.ignore();
         cout << "Ingrese edad: ";
         cin >> per[i].edad;
         cout << "Es casado? (s/n)";
-        cin.get(resp);
+        cin >> resp;
         cin.ignore();
+
         if (resp == 's' || resp == 'S')
-        {
             per[i].casado = true;
-        }
     }
 }
 
 void mostraDatosRegistro(persona per[], int n)
 {
+    cout << "ID\tNOMBRE\tEDAD\tCASADO" << endl;
     for (int i = 0; i < n; i++)
     {
         cout << per[i].id << "\t";
         cout << per[i].nombre << "\t";
         cout << per[i].edad << "\t";
-        cout << per[i].casado << endl;
+        (per[i].casado) ? cout << "SI" << endl : cout << "NO" << endl;
     }
+}
+
+persona buscarPersona(persona per[], int n, int id)
+{
+    persona founded;
+    for (int i = 0; i < n; i++)
+    {
+        if (per[i].id == id)
+        {
+            founded = per[i];
+            return founded;
+        }
+    }
+    return founded;
+}
+
+persona buscarPersonaPorNombre(persona per[], int n, string nombres)
+{
+    int j = 0;
+    persona encontrados[10];
+    persona encontrada;
+
+    for (int i = 0; i < n; i++) // Se recorre correctamente el array
+    {
+        if (per[i].nombre.find(nombres) != string::npos)
+        {
+            encontrados[j] = per[i];
+            j++;
+            encontrada = per[i];
+        }
+    }
+
+    cout << "Cantidad de personas encontradas: " << j << endl;
+    for (int i = 0; i < j; i++)
+    {
+        cout << encontrados[i].id << "\t" << endl;
+        cout << encontrados[i].nombre << "\t" << endl;
+        cout << encontrados[i].edad << "\t" << endl;
+        (encontrados[i].casado) ? cout << "SI" << endl : cout << "NO" << endl;
+    }
+
+    return (j > 0) ? encontrados[0] : persona{}; // Devuelve la primera coincidencia o una persona vacía
 }
 
 int main()
 {
-    int np;
+    int np, id;
+    string nombre;
     cout << "Ingrese la cantidad de personas: ";
     cin >> np;
+
     persona personas[np];
     ingresaDatosRegistro(personas, np);
+    mostraDatosRegistro(personas, np);
+
+    cout << "\nIngrese nomre de la persina a buscar: ";
+    cin.ignore();
+    getline(cin, nombre);
+
+    persona founded = buscarPersonaPorNombre(personas, np, nombre);
+    if (founded.id == 0)
+    {
+        cout << "Persona no encontrada" << endl;
+    }
+    else
+    {
+        cout << "ID\tNOMBRE\tEDAD\tCASADO" << endl;
+        cout << founded.id << "\t";
+        cout << founded.nombre << "\t";
+        cout << founded.edad << "\t";
+        (founded.casado) ? cout << "SI" << endl : cout << "NO" << endl;
+    }
+
     return 0;
 }
