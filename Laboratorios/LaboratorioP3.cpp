@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <iomanip> // Para mejorar el formato de la tabla
+#include <iomanip> 
 using namespace std;
 
 struct Estudiante
@@ -13,19 +13,6 @@ struct Estudiante
     char categoria;
 };
 
-// Funcion para calcular la categoria segun el promedio
-char calcularCategoria(float promedio)
-{
-    if (promedio >= 17)
-        return 'A';
-    if (promedio >= 13)
-        return 'B';
-    if (promedio >= 10)
-        return 'C';
-    return 'D';
-}
-
-// Funcion para mostrar la lista de estudiantes con formato corregido
 void mostrarLista(const vector<Estudiante> &estudiantes)
 {
     system("cls");
@@ -44,7 +31,7 @@ void mostrarLista(const vector<Estudiante> &estudiantes)
     for (const auto &est : estudiantes)
     {
         cout << setw(5) << est.id
-             << setw(25) << est.nombre.substr(0, 24) // Limitar el nombre a 24 caracteres
+             << setw(25) << est.nombre.substr(0, 24)
              << setw(10) << est.nota1
              << setw(10) << est.nota2
              << setw(12) << est.promedio
@@ -52,7 +39,6 @@ void mostrarLista(const vector<Estudiante> &estudiantes)
     }
 }
 
-// Funcion para anadir un estudiante
 void anadirEstudiante(vector<Estudiante> &estudiantes, int &id)
 {
     system("cls");
@@ -90,7 +76,17 @@ void anadirEstudiante(vector<Estudiante> &estudiantes, int &id)
     cout << "\nEstudiante anadido con exito.\n";
 }
 
-// Funcion para eliminar un estudiante
+char calcularCategoria(float promedio)
+{
+    if (promedio >= 17)
+        return 'A';
+    if (promedio >= 13)
+        return 'B';
+    if (promedio >= 10)
+        return 'C';
+    return 'D';
+}
+
 void eliminarEstudiante(vector<Estudiante> &estudiantes)
 {
     system("cls");
@@ -101,7 +97,6 @@ void eliminarEstudiante(vector<Estudiante> &estudiantes)
         return;
     }
 
-    // Mostrar la lista antes de eliminar
     mostrarLista(estudiantes);
 
     int idEliminar;
@@ -121,7 +116,6 @@ void eliminarEstudiante(vector<Estudiante> &estudiantes)
     cout << "ID no encontrado. No se elimino ningun estudiante.\n";
 }
 
-// Funcion para mostrar el menu
 void mostrarMenu()
 {
     cout << "\n----------------------\n";
@@ -133,7 +127,6 @@ void mostrarMenu()
     cout << "----------------------\n";
 }
 
-// Funcion principal del menu
 void menuPrincipal()
 {
     int id = 1;
@@ -143,7 +136,7 @@ void menuPrincipal()
 
     while (bandera)
     {
-        system("cls"); // Limpia la pantalla antes de mostrar el menu
+        system("cls");
         mostrarMenu();
         cin >> op;
 
