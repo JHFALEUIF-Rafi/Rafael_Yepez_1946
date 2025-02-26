@@ -3,8 +3,7 @@
 #include <iomanip> 
 using namespace std;
 
-struct Estudiante
-{
+struct Estudiante {
     int id;
     string nombre;
     float nota1;
@@ -13,25 +12,29 @@ struct Estudiante
     char categoria;
 };
 
-void mostrarLista(const vector<Estudiante> &estudiantes)
-{
+char calcularCategoria(float promedio) {
+    if (promedio >= 17) return 'A';
+    if (promedio >= 13) return 'B';
+    if (promedio >= 10) return 'C';
+    return 'D';
+}
+
+void mostrarLista(const vector<Estudiante> &estudiantes) {
     system("cls");
 
-    if (estudiantes.empty())
-    {
+    if (estudiantes.empty()) {
         cout << "No hay estudiantes registrados.\n";
         return;
     }
 
     cout << "-------------------------------------------------------------------------------\n";
-    cout << setw(5) << "ID" << setw(25) << "Nombre" << setw(10) << "Nota1"
+    cout << setw(5) << "ID" << setw(25) << "Nombre" << setw(10) << "Nota1" 
          << setw(10) << "Nota2" << setw(12) << "Promedio" << setw(12) << "Categoria\n";
     cout << "-------------------------------------------------------------------------------\n";
 
-    for (const auto &est : estudiantes)
-    {
+    for (const auto &est : estudiantes) {
         cout << setw(5) << est.id
-             << setw(25) << est.nombre.substr(0, 24)
+             << setw(25) << est.nombre.substr(0, 24)  
              << setw(10) << est.nota1
              << setw(10) << est.nota2
              << setw(12) << est.promedio
@@ -39,8 +42,7 @@ void mostrarLista(const vector<Estudiante> &estudiantes)
     }
 }
 
-void anadirEstudiante(vector<Estudiante> &estudiantes, int &id)
-{
+void anadirEstudiante(vector<Estudiante> &estudiantes, int &id) {
     system("cls");
 
     Estudiante est;
@@ -51,16 +53,14 @@ void anadirEstudiante(vector<Estudiante> &estudiantes, int &id)
     cin.ignore();
     getline(cin, est.nombre);
 
-    do
-    {
+    do {
         cout << "Ingrese Nota 1 (1-20): ";
         cin >> est.nota1;
         if (est.nota1 < 1 || est.nota1 > 20)
             cout << "Error: La calificacion debe estar entre 1 y 20.\n";
     } while (est.nota1 < 1 || est.nota1 > 20);
 
-    do
-    {
+    do {
         cout << "Ingrese Nota 2 (1-20): ";
         cin >> est.nota2;
         if (est.nota2 < 1 || est.nota2 > 20)
@@ -76,23 +76,10 @@ void anadirEstudiante(vector<Estudiante> &estudiantes, int &id)
     cout << "\nEstudiante anadido con exito.\n";
 }
 
-char calcularCategoria(float promedio)
-{
-    if (promedio >= 17)
-        return 'A';
-    if (promedio >= 13)
-        return 'B';
-    if (promedio >= 10)
-        return 'C';
-    return 'D';
-}
-
-void eliminarEstudiante(vector<Estudiante> &estudiantes)
-{
+void eliminarEstudiante(vector<Estudiante> &estudiantes) {
     system("cls");
 
-    if (estudiantes.empty())
-    {
+    if (estudiantes.empty()) {
         cout << "No hay estudiantes para eliminar.\n";
         return;
     }
@@ -103,10 +90,8 @@ void eliminarEstudiante(vector<Estudiante> &estudiantes)
     cout << "\nIngrese el ID del estudiante a eliminar: ";
     cin >> idEliminar;
 
-    for (auto it = estudiantes.begin(); it != estudiantes.end(); ++it)
-    {
-        if (it->id == idEliminar)
-        {
+    for (auto it = estudiantes.begin(); it != estudiantes.end(); ++it) {
+        if (it->id == idEliminar) {
             estudiantes.erase(it);
             cout << "Estudiante eliminado correctamente.\n";
             return;
@@ -116,8 +101,7 @@ void eliminarEstudiante(vector<Estudiante> &estudiantes)
     cout << "ID no encontrado. No se elimino ningun estudiante.\n";
 }
 
-void mostrarMenu()
-{
+void mostrarMenu() {
     cout << "\n----------------------\n";
     cout << "Seleccione una opcion:\n";
     cout << "1. Mostrar lista de estudiantes\n";
@@ -127,43 +111,39 @@ void mostrarMenu()
     cout << "----------------------\n";
 }
 
-void menuPrincipal()
-{
+void menuPrincipal() {
     int id = 1;
     vector<Estudiante> estudiantes;
     int op;
     bool bandera = true;
 
-    while (bandera)
-    {
-        system("cls");
+    while (bandera) {
+        system("cls"); 
         mostrarMenu();
         cin >> op;
 
-        switch (op)
-        {
-        case 1:
-            mostrarLista(estudiantes);
-            break;
-        case 2:
-            anadirEstudiante(estudiantes, id);
-            break;
-        case 3:
-            eliminarEstudiante(estudiantes);
-            break;
-        case 4:
-            bandera = false;
-            break;
-        default:
-            cout << "Opcion invalida. Intente nuevamente.\n";
+        switch (op) {
+            case 1:
+                mostrarLista(estudiantes);
+                break;
+            case 2:
+                anadirEstudiante(estudiantes, id);
+                break;
+            case 3:
+                eliminarEstudiante(estudiantes);
+                break;
+            case 4:
+                bandera = false;
+                break;
+            default:
+                cout << "Opcion invalida. Intente nuevamente.\n";
         }
 
-        system("pause");
+        system("pause"); 
     }
 }
 
-int main()
-{
+int main() {
     menuPrincipal();
     return 0;
 }
