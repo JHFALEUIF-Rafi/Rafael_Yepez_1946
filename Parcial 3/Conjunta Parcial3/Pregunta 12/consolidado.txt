@@ -1,0 +1,33 @@
+Id  Producto    Cantidad    Precio(unitario)        Sucursal    Total
+ 1      Laptop         20          1348.78        Sur     26975.60
+ 2     T.Video          4          1892.21      Norte      7568.84
+ 3     Headset         15            63.00       Este       945.00
+ 4       Mouse          9            48.78       Este       439.02
+ 5     Monitor          7           286.47      Oeste      2005.29
+ 6     Teclado         19            38.99        Sur       740.81
+ 7    DiscoSSD         23            49.32        Sur      1134.36
+ 8     M.Flash         32            28.60       Este       915.20
+ 9    L.Optico          4            58.48      Norte       233.92
+10   Procesador          7           461.81      Oeste      3232.67
+
+Cantidades totales de cada artículo:
+Laptop: 20
+T.Video: 4
+Headset: 15
+Mouse: 9
+Monitor: 7
+Teclado: 19
+DiscoSSD: 23
+M.Flash: 32
+L.Optico: 4
+Procesador: 7
+
+Recaudación total de cada sucursal:
+Sur: $28850.77
+Norte: $7802.76
+Este: $2299.22
+Oeste: $5237.96
+
+Recaudación total de la empresa: $44190.71
+
+Sucursal de mayor recaudación: Sur con $28850.77

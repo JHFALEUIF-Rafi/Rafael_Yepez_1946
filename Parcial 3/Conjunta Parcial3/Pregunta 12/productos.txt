@@ -1,0 +1,11 @@
+1 Laptop 20 1348.78 Sur
+2 T.Video 4 1892.21 Norte
+3 Headset 15 63.00 Este
+4 Mouse 9 48.78 Este
+5 Monitor 7 286.47 Oeste
+6 Teclado 19 38.99 Sur
+7 DiscoSSD 23 49.32 Sur
+8 M.Flash 32 28.60 Este
+9 L.Optico 4 58.48 Norte
+10 Procesador 7 461.81 Oeste
+
